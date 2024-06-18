@@ -7,6 +7,32 @@
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <h1>Massive Skill Issue</h1>
+    <span>
+        <h1>MASSIVE</h1>
+        <h1 >SKILL</h1>
+        <h1>ISSUE</h1> 
+    </span>
+    <div class="circle"></div>
+    <div class="circle-outline"></div>
+
+    <script>
+        const circle = document.querySelector('.circle');
+        const circleOutline = document.querySelector('.circle-outline');
+        document.addEventListener('mousemove', (e) => {
+            circle.style.display = 'block';
+            circleOutline.style.display = 'block';
+
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            circle.style.left = `${posX}px`;
+            circle.style.top = `${posY}px`;
+
+            circleOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, {duration: 500, fill: "forwards"});
+        })
+    </script>
 </body>
 </html>
